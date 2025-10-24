@@ -44,7 +44,7 @@ Antes de iniciar, certifique-se de ter instalados:
 ### Passo 1 — Clonar o Repositório
 
 ```bash
-git clone [INSIRA_O_LINK_DO_SEU_REPOSITORIO]
+git clone [https://github.com/kleuvyn/Ritmos-do-Coracao-Chat]
 cd chatbot-ritmos-do-coracao
 ````
 
