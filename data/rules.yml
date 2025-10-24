@@ -1,0 +1,142 @@
+version: "3.1"
+rules:
+
+- rule: Fluxo inicial de saudação
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_Menu_doacao
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder ao Menu de Doação
+  steps:
+    - intent: Menu_doacao
+    - action: utter_Menu_doacao
+
+- rule: Mostrar Menu após confirmação (Sim)
+  steps:
+    - intent: affirm
+    - action: utter_Menu_doacao
+
+- rule: Responder à intenção de Voltar (Menu Principal)
+  steps:
+    - intent: Voltar
+    - action: utter_Voltar
+
+- rule: Iniciar Menu Nota Fiscal (Exibir Menu e Esperar)
+  steps:
+    - intent: Menu_nota_fiscal_paulista
+    - action: utter_Menu_nota_fiscal_paulista
+
+
+- rule: Responder a CNPJ da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_cnpj
+    - action: utter_Sub_nota_fiscal_cnpj
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Como Fazer a doação da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_como_fazer
+    - action: utter_Sub_nota_fiscal_como_fazer
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Verificar Validação da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_verificar_validacao
+    - action: utter_Sub_nota_fiscal_verificar_validacao
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Doação Anônima da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_doacao_anonima
+    - action: utter_Sub_nota_fiscal_doacao_anonima
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Doação Automática da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_doacao_automatica
+    - action: utter_Sub_nota_fiscal_doacao_automatica
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Cadastrar Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_cadastrar_nota
+    - action: utter_Sub_nota_fiscal_cadastrar_nota
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Prazo e Validade da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_prazo_validade
+    - action: utter_Sub_nota_fiscal_prazo_validade
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Problemas Comuns da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_problemas_comuns
+    - action: utter_Sub_nota_fiscal_problemas_comuns
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Doação Pix
+  steps:
+    - intent: Sub_doacao_pix
+    - action: utter_Sub_doacao_pix
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder a Doação Dinheiro/Cartão
+  steps:
+    - intent: Sub_doacao_dinheiro_cartao
+    - action: utter_Sub_doacao_dinheiro_cartao
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder a Entrega de Itens
+  steps:
+    - intent: Sub_doacao_entrega_itens
+    - action: utter_Sub_doacao_entrega_itens
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder a Doação Bancária
+  steps:
+    - intent: Sub_doacao_bancaria
+    - action: utter_Sub_doacao_bancaria
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder a O Que Doar
+  steps:
+    - intent: Sub_doacao_o_que_doar
+    - action: utter_Sub_doacao_o_que_doar
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder a Doação PayPal
+  steps:
+    - intent: Sub_doacao_paypal
+    - action: utter_Sub_doacao_paypal
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder a Formas de Doar (Geral)
+  steps:
+    - intent: Sub_doacao_formas_doar
+    - action: utter_Sub_doacao_formas_doar
+    - action: utter_proxima_pergunta
+    - active_loop: null 
+
+- rule: Responder a textos não reconhecidos (Fallback)
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default
+    - active_loop: null

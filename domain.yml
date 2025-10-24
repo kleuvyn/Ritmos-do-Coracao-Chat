@@ -1,0 +1,398 @@
+version: "3.1"
+language: pt
+
+intents:
+  - Menu_doacao
+  - Menu_nota_fiscal_paulista
+  - Sub_doacao_bancaria
+  - Sub_doacao_dinheiro_cartao
+  - Sub_doacao_entrega_itens
+  - Sub_doacao_formas_doar
+  - Sub_doacao_horarios_locais
+  - Sub_doacao_o_que_doar
+  - Sub_doacao_paypal
+  - Sub_doacao_pix
+  - Sub_nota_fiscal_cadastrar_nota
+  - Sub_nota_fiscal_cnpj
+  - Sub_nota_fiscal_como_fazer
+  - Sub_nota_fiscal_doacao_anonima
+  - Sub_nota_fiscal_doacao_automatica
+  - Sub_nota_fiscal_prazo_validade
+  - Sub_nota_fiscal_problemas_comuns
+  - Sub_nota_fiscal_verificar_validacao
+  - Voltar
+  - greet
+  - affirm
+  - deny
+  - bot_challenge
+  - nlu_fallback
+
+actions:
+  - utter_Menu_doacao
+  - utter_Menu_nota_fiscal_paulista
+  - utter_Sub_doacao_bancaria
+  - utter_Sub_doacao_dinheiro_cartao
+  - utter_Sub_doacao_entrega_itens
+  - utter_Sub_doacao_formas_doar
+  - utter_Sub_doacao_horarios_locais
+  - utter_Sub_doacao_o_que_doar
+  - utter_Sub_doacao_paypal
+  - utter_Sub_doacao_pix
+  - utter_Sub_nota_fiscal_cadastrar_nota
+  - utter_Sub_nota_fiscal_cnpj
+  - utter_Sub_nota_fiscal_como_fazer
+  - utter_Sub_nota_fiscal_doacao_anonima
+  - utter_Sub_nota_fiscal_doacao_automatica
+  - utter_Sub_nota_fiscal_prazo_validade
+  - utter_Sub_nota_fiscal_problemas_comuns
+  - utter_Sub_nota_fiscal_verificar_validacao
+  - utter_Voltar
+  - utter_proxima_pergunta 
+  - utter_default
+  - utter_greet
+  - utter_iamabot
+
+forms:
+  sub_menu_nota_fiscal_form:
+    required_slots: []
+
+responses:
+  utter_proxima_pergunta:
+    - text: "Mais alguma dúvida sobre as doações ou sobre o Projeto Ritmos do Coração?"
+
+  utter_default:
+    - text: |
+        Desculpe, não consegui entender o que você disse.
+        
+        Por favor, digite o nome de uma das opções do menu ou reformule sua pergunta.
+        
+        Você gostaria de voltar ao Menu Principal?
+        • Sim
+        • Não
+
+  utter_greet:
+    - text: "Olá! 👋 Eu sou o assistente virtual do Projeto Ritmos do Coração. O que você gostaria de saber hoje?"
+  
+  utter_iamabot:
+    - text: "Eu sou um assistente virtual, treinado para te ajudar com informações sobre as doações para a ONG Ritmos do Coração."
+
+  utter_Menu_doacao:
+    - text: |
+        Você gostaria de fazer uma doação? 
+        Confira as opções disponíveis:
+        
+        • Nota Fiscal Paulista  
+        • Pix  
+        • Cartão de crédito ou débito  
+        • Doação de itens (alimentos, roupas etc)  
+        • Entrega presencial  
+        
+        Digite o nome da opção para saber mais.
+
+  utter_Menu_nota_fiscal_paulista:
+    - text: |
+        Você escolheu doar pela Nota Fiscal Paulista 
+        Aqui estão as opções que posso te explicar:
+        
+        • CNPJ da ONG 
+        • Como fazer a doação  
+        • Verificar se a doação foi validada  
+        • Fazer uma doação anônima  
+        • Configurar doação automática  
+        • Onde e como cadastrar a nota  
+        • Prazo e validade  
+        • Problemas comuns  
+        
+        Digite o nome da opção para saber mais!
+
+  utter_Voltar:
+    - text: |
+        Você voltou ao menu principal 
+        Essas são as opções de doação disponíveis:
+        
+        • Nota Fiscal Paulista  
+        • Pix  
+        • Cartão de crédito ou débito  
+        • Doação de itens (alimentos, roupas etc)  
+        • Entrega presencial  
+        
+        Digite o nome da opção para saber mais!
+
+  utter_Sub_doacao_bancaria:
+    - text: |
+        Você pode fazer uma doação por transferência bancária usando uma das nossas contas:
+        -Banco do Brasil  
+        Agência: 1817-1  
+        Conta Corrente: 24.008-7  
+        -Banco Itaú  
+        Agência: 1659  
+        Conta Poupança: 21080-9 / 500  
+        Pix: CNPJ da ONG: 11.433.432/0001-02
+        
+        Todas as doações ajudam a manter nossos projetos sociais vivos e em expansão 
+        Muito obrigada por apoiar a Ritmos do Coração!
+
+  utter_Sub_doacao_dinheiro_cartao:
+    - text: |
+        Você pode fazer uma doação em dinheiro, cartão ou boleto das seguintes formas:
+        
+        Doação em dinheiro (pontual ou mensal):  
+        Banco Itaú  
+        Agência: 1659  
+        Conta Poupança: 21080-9 / 500  
+        Banco do Brasil  
+        Agência: 1817-1  
+        Conta Corrente: 24.008-7  
+        
+        Doação com cartão de crédito, débito ou boleto:  
+        Acesse: https://ritmosdocoracao.org.br/doacao
+        
+        Doação via PayPal:  
+        https://www.paypal.com/donate?token=xbB0fOLTXx_FmNrl0lacDUef_PI32qNdGfZRv9-wNo237P5QyGTIkmbYmnFR1rD9JF20HgDBIk7ZOQU2
+        
+        Agradecemos pelo seu apoio.
+
+  utter_Sub_doacao_entrega_itens:
+    - text: |
+        As doações devem ser entregues diretamente na sede da ONG Ritmos do Coração.
+        
+        Endereço:  
+        Rua Barão de Aguiar, 108 – Parque Colonial – São Paulo/SP  
+        CEP: 04611-040  
+        (próximo ao Aeroporto de Congonhas)
+        
+        Horário de funcionamento:  
+        De segunda a sexta-feira, das 09h às 17h
+        
+        Itens aceitos para entrega:  
+        • Brinquedos em bom estado  
+        • Livros infantis 
+        • Instrumentos musicais usados e conservados  
+        
+        Importante:  
+        • Não recebemos doações fora do horário comercial  
+        • Não temos pontos de coleta alternativos  
+        • Também não realizamos retirada de doações em domicílio  
+        • Não aceitamos roupas usadas, alimentos ou produtos de higiene
+
+  utter_Sub_doacao_formas_doar:
+    - text: |
+        Existem várias formas de ajudar o Projeto Ritmos do Coração! Você pode contribuir através de:
+        
+        • Doação em dinheiro (Pix, transferência, cartão ou boleto)
+        • Doação de tempo (Voluntariado)
+        • Doação de materiais (Brinquedos, livros, instrumentos musicais em bom estado)
+        • Doação via Nota Fiscal Paulista
+        
+        Qual destas opções você gostaria de saber mais detalhes?
+
+  utter_Sub_doacao_horarios_locais:
+    - text: |
+        A sede da ONG Ritmos do Coração está localizada na Rua Barão de Aguiar, 108 – Parque Colonial, São Paulo/SP, CEP 04611-040, próximo ao Aeroporto de Congonhas.
+        
+        O horário de funcionamento é de segunda a sexta-feira, das 09h às 17h.
+        
+        As doações devem ser entregues pessoalmente na sede, pois não fazemos retirada em domicílio nem temos pontos de coleta externos.
+        
+        Não é possível realizar doações fora do horário comercial.
+        
+        Agradecemos muito sua colaboração e apoio.
+
+  utter_Sub_doacao_o_que_doar:
+    - text: |
+        Aceitamos doações de:  
+        - Brinquedos e livros infantis em bom estado  
+        - Instrumentos musicais usados, desde que conservados
+        
+        Não aceitamos:  
+        - Roupas usadas  
+        - Alimentos  
+        - Produtos de higiene
+        
+        Nossa sede está localizada na Rua Barão de Aguiar, 108 – Parque Colonial – São Paulo/SP – CEP 04611-040, próximo ao Aeroporto de Congonhas.
+        
+        O horário para entrega das doações é de segunda a sexta-feira, das 09h às 17h.  
+        Não recebemos doações fora do horário comercial e não possuímos pontos de coleta alternativos.
+        
+        Agradecemos muito seu apoio e solidariedade.
+
+  utter_Sub_doacao_paypal:
+    - text: |
+        Para doar com segurança pelo PayPal, acesse o link abaixo:
+        
+        https://www.paypal.com/donate?token=xbB0fOLTXx_FmNrl0lacDUef_PI32qNdGfZRv9-wNo237P5QyGTIkmbYmnFR1rD9JF20HgDBIk7ZOQU2
+        
+        Agradecemos muito o seu apoio
+
+  utter_Sub_doacao_pix:
+    - text: |
+        Sim, aceitamos doações via Pix.
+        A chave Pix da ONG Ritmos do Coração é o CNPJ: 11.433.432/0001-02.
+        
+        Agradecemos muito sua colaboração!
+
+  utter_Sub_nota_fiscal_cadastrar_nota:
+    - text: |
+        Você pode fazer isso tanto pelo site quanto pelo aplicativo oficial da Nota Fiscal Paulista. Abaixo explico os dois caminhos:
+        
+        💻 Cadastro pelo SITE (computador ou navegador do celular)
+        
+            Acesse o site oficial da Nota Fiscal Paulista:
+            https://www.nfp.fazenda.sp.gov.br
+        
+            Clique em "Acesso ao Sistema" (fica no canto superior direito).
+        
+            Faça login com seu CPF/CNPJ e senha.
+            (Se for o primeiro acesso, será necessário fazer o cadastro previamente.)
+        
+            No menu lateral esquerdo, vá até:
+            Entidades > Doação de Cupons com CPF (automática)
+        
+            Clique em "Cadastrar Entidade"
+        
+            Digite o CNPJ (11.433.432/0001-02) da entidade que deseja ajudar (confira se está correto!)
+        
+            Escolha o período de doação automática (ex: 12 meses)
+        
+            Clique em "Confirmar"
+        
+        Pronto! Toda vez que você pedir CPF na nota, os créditos e bilhetes serão doados automaticamente para essa entidade.
+        
+        📲 Cadastro pelo APLICATIVO (celular Android ou iOS)
+        
+            Baixe o app oficial da Nota Fiscal Paulista:
+            – Android: Google Play Store
+            – iOS: App Store
+        
+            Abra o aplicativo e faça login com seu CPF e senha.
+        
+            No menu principal, vá em:
+            Doação Automática com CPF
+        
+            Toque em "Cadastrar Entidade"
+        
+            Digite o CNPJ da Ritmos: 11.433.432/0001-02
+        
+            Escolha o período da doação (por exemplo: 12 meses)
+        
+            Clique em Confirmar
+        
+        DICA: Verifique se a entidade escolhida está ativa e apta a receber doações.
+
+  utter_Sub_nota_fiscal_cnpj:
+    - text: |
+        O CNPJ da ONG Ritmos do Coração é 11.433.432/0001-02.  
+        Use esse número no campo "entidade beneficente" ao cadastrar sua nota no site da Nota Fiscal Paulista.
+
+  utter_Sub_nota_fiscal_como_fazer:
+    - text: |
+        Você pode doar suas notas fiscais para apoiar o nosso projeto diretamente pelo site ou app da Nota Fiscal Paulista. Abaixo explico as duas formas:
+        
+        DOAÇÃO AUTOMÁTICA (mais prática!)
+        
+        Você cadastra o CNPJ da entidade uma vez e todas as suas notas com CPF serão doadas automaticamente, sem precisar fazer mais nada.
+        
+        PASSO A PASSO:
+        
+        1️⃣ Acesse o site: https://www.nfp.fazenda.sp.gov.br  
+        2️⃣ Faça login com seu CPF e senha  
+        3️⃣ No menu, clique em “Entidades” > “Doação de Cupons com CPF (automática)”  
+        4️⃣ Clique em “Cadastrar Entidade”  
+        5️⃣ Informe o CNPJ: 11.433.432/0001-02.  
+        6️⃣ Confirme e pronto! Suas futuras notas serão doadas automaticamente 
+        
+        DOAÇÃO MANUAL (nota sem CPF)
+        
+        Se você recebeu uma nota sem CPF, ainda pode doar manualmente:
+        
+        PASSO A PASSO:
+        
+        1️⃣ Acesse o mesmo site: https://www.nfp.fazenda.sp.gov.br  
+        2️⃣ Clique em “Acesso com CPF”  
+        3️⃣ Vá em “Doação de Cupons com Código de Barras”  
+        4️⃣ Digite os dados da nota (CNPJ do estabelecimento, número, valor etc.)  
+        5️⃣ Escolha a entidade desejada (ou digite o CNPJ)  
+        6️⃣ Confirme e sua doação será enviada!
+        
+        APLICATIVO (Android/iOS)
+        
+        Você também pode doar direto pelo app da NFP:
+        
+        1️⃣ Baixe o app “Nota Fiscal Paulista”  
+        2️⃣ Faça login com CPF e senha  
+        3️⃣ Vá em “Doação Automática” ou “Doar Nota Manual”  
+        4️⃣ Siga os mesmos passos citados acima
+        
+        CNPJ: 11.433.432/0001-02.
+
+  utter_Sub_nota_fiscal_doacao_anonima:
+    - text: |
+        Sim! 
+        Você pode doar notas fiscais sem se identificar, usando cupons sem CPF  
+        Essas doações são anônimas e ajudam muito nossa ONG!
+
+  utter_Sub_nota_fiscal_doacao_automatica:
+    - text: |
+        Sim! Você pode doar automaticamente suas notas fiscais para apoiar o nosso projeto — e é super fácil! 
+        
+        Ao ativar a doação automática, toda nota fiscal com CPF emitida para você será doada para a entidade que você escolher, sem precisar cadastrar nota por nota.
+        
+        PASSO A PASSO:
+        
+        1️⃣ Acesse o site oficial da Nota Fiscal Paulista:  
+        https://www.nfp.fazenda.sp.gov.br
+        
+        2️⃣ Faça login com seu CPF e senha
+        
+        3️⃣ No menu, clique em:  
+         “Entidades” > “Doação de Cupons com CPF (automática)”
+        
+        4️⃣ Clique em “Cadastrar Entidade”
+        
+        5️⃣ Digite o **CNPJ da entidade** que você deseja apoiar  
+        CNPJ: 11.433.432/0001-02
+        
+        6️⃣ Escolha o período da doação (geralmente 1 ano) e confirme
+        
+        Pronto! Agora todas as notas emitidas com seu CPF serão doadas automaticamente!
+        
+        Se preferir, também dá para fazer isso pelo aplicativo da Nota Fiscal Paulista (Android e iOS) 
+        
+        Obrigada por apoiar nosso trabalho com apenas um clique!
+
+  utter_Sub_nota_fiscal_prazo_validade:
+    - text: |
+        Prazo e Validade da Nota Fiscal Paulista
+        
+        Toda nota fiscal com CPF tem um prazo de até 90 dias a partir da data da compra para ser validada no sistema da Nota Fiscal Paulista.
+        
+        - Após esses 90 dias, se a nota não for processada corretamente (ou estiver com erro), ela pode não gerar créditos e não será considerada para sorteios.
+        -  Se você quer doar sua nota para alguma entidade cadastrada, como uma ONG, o ideal é fazer a doação antes de completar esses 90 dias. Após isso, a nota expira e não poderá mais ser doada.
+        - Importante: A nota pode aparecer no sistema em até 10 dias úteis após a compra. Se ela não aparecer nesse período, vale conferir se foi emitida corretamente com o CPF informado.
+        
+        Dica: Para não perder nenhuma nota, cadastre sua doação como automática pelo site ou aplicativo. Assim, todas as notas com seu CPF serão doadas dentro do prazo automaticamente.
+        
+        Se quiser, posso te mostrar como ativar a doação automática!
+
+  utter_Sub_nota_fiscal_problemas_comuns:
+    - text: |
+        Se sua nota não foi aceita, pode ser por alguns motivos:
+        
+        • Prazo de doação expirado  
+        • Cupom com informações incorretas  
+        • Problemas técnicos no site da Nota Fiscal Paulista
+        
+        Recomendamos tentar mais tarde ou entrar em contato com o suporte do programa.
+
+  utter_Sub_nota_fiscal_verificar_validacao:
+    - text: |
+        Se você doou sua Nota Fiscal Paulista usando CPF e indicou nossa entidade, a confirmação pode demorar alguns dias para aparecer no sistema da Sefaz.
+        
+        Para verificar, siga esses passos:
+        
+        1️⃣ Acesse o site da Nota Fiscal Paulista: https://www.nfp.fazenda.sp.gov.br  
+        2️⃣ Faça login com seu CPF e senha  
+        3️⃣ Clique em “Doações” > “Doações Efetuadas”  
+        4️⃣ Escolha o período e confira se sua doação foi registrada
+        
+        Se tiver dúvidas ou não encontrar a informação, posso te ajudar com o passo a passo.

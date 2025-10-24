@@ -1,0 +1,19 @@
+{
+  "0": "Menu_doacao",
+  "1": "Menu_nota_fiscal_paulista",
+  "2": "Sub_doacao_dinheiro_cartao",
+  "3": "Sub_doacao_entrega_itens",
+  "4": "Sub_doacao_formas_doar",
+  "5": "Sub_doacao_o_que_doar",
+  "6": "Sub_doacao_paypal",
+  "7": "Sub_doacao_pix",
+  "8": "Sub_nota_fiscal_cadastrar_nota",
+  "9": "Sub_nota_fiscal_cnpj",
+  "10": "Sub_nota_fiscal_como_fazer",
+  "11": "Sub_nota_fiscal_doacao_anonima",
+  "12": "Sub_nota_fiscal_doacao_automatica",
+  "13": "Sub_nota_fiscal_prazo_validade",
+  "14": "Sub_nota_fiscal_problemas_comuns",
+  "15": "Sub_nota_fiscal_verificar_validacao",
+  "16": "Voltar"
+}
