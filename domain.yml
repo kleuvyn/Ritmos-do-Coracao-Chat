@@ -19,13 +19,22 @@ intents:
   - Sub_nota_fiscal_doacao_automatica
   - Sub_nota_fiscal_prazo_validade
   - Sub_nota_fiscal_problemas_comuns
+  - Sub_nota_fiscal_problemas_cadastro
+  - Sub_nota_fiscal_cadastro_pf
+  - Sub_nota_fiscal_cadastro_pj
+  - Sub_nota_fiscal_reativar_cadastro
+  - Sub_nota_fiscal_recuperar_senha
+  - Sub_nota_fiscal_desbloqueio_senha
   - Sub_nota_fiscal_verificar_validacao
   - Voltar
+  - voltar_menu_principal
   - greet
   - affirm
   - deny
   - bot_challenge
   - nlu_fallback
+  - sobre_projeto
+  - localizacao_horarios
 
 actions:
   - utter_Menu_doacao
@@ -45,12 +54,22 @@ actions:
   - utter_Sub_nota_fiscal_doacao_automatica
   - utter_Sub_nota_fiscal_prazo_validade
   - utter_Sub_nota_fiscal_problemas_comuns
+  - utter_Sub_nota_fiscal_problemas_cadastro
+  - utter_Sub_nota_fiscal_cadastro_pf
+  - utter_Sub_nota_fiscal_cadastro_pj
+  - utter_Sub_nota_fiscal_reativar_cadastro
+  - utter_Sub_nota_fiscal_recuperar_senha
+  - utter_Sub_nota_fiscal_desbloqueio_senha
   - utter_Sub_nota_fiscal_verificar_validacao
   - utter_Voltar
-  - utter_proxima_pergunta 
+  - utter_proxima_pergunta
+  - utter_continuar_conversa
+  - utter_encerrar_conversa
   - utter_default
   - utter_greet
   - utter_iamabot
+  - utter_sobre_projeto
+  - utter_localizacao_horarios
 
 forms:
   sub_menu_nota_fiscal_form:
@@ -58,7 +77,22 @@ forms:
 
 responses:
   utter_proxima_pergunta:
-    - text: "Mais alguma dúvida sobre as doações ou sobre o Projeto Ritmos do Coração?"
+    - text: |
+        Mais alguma dúvida sobre as doações ou sobre o Projeto Ritmos do Coração?
+        
+        • Sim
+        • Não
+
+  utter_continuar_conversa:
+    - text: "Ótimo! Vou te mostrar o menu novamente."
+
+  utter_encerrar_conversa:
+    - text: |
+        Obrigado por conversar comigo! 💙
+        
+        Se precisar de mais informações sobre doações, é só me chamar novamente.
+        
+        Sua ajuda faz toda a diferença para o Projeto Ritmos do Coração! 🎵
 
   utter_default:
     - text: |
@@ -71,7 +105,15 @@ responses:
         • Não
 
   utter_greet:
-    - text: "Olá! 👋 Eu sou o assistente virtual do Projeto Ritmos do Coração. O que você gostaria de saber hoje?"
+    - text: |
+        Olá! 👋 Eu sou o assistente virtual do Projeto Ritmos do Coração. 
+        
+        Como posso te ajudar hoje?
+        
+        • Fazer uma doação
+        • Nota Fiscal Paulista
+        • Localização e horários
+        • Sobre o projeto
   
   utter_iamabot:
     - text: "Eu sou um assistente virtual, treinado para te ajudar com informações sobre as doações para a ONG Ritmos do Coração."
@@ -86,16 +128,17 @@ responses:
         • Cartão de crédito ou débito  
         • Doação de itens (alimentos, roupas etc)  
         • Entrega presencial  
-        
-        Digite o nome da opção para saber mais.
+        • Voltar para o menu principal
+
+        Escolha a opção desejada para saber mais.
 
   utter_Menu_nota_fiscal_paulista:
     - text: |
-        Você escolheu doar pela Nota Fiscal Paulista 
+        Você escolheu doar pela Nota Fiscal Paulista. 
         Aqui estão as opções que posso te explicar:
         
         • CNPJ da ONG 
-        • Como fazer a doação  
+        • Como doar via Nota Fiscal  
         • Verificar se a doação foi validada  
         • Fazer uma doação anônima  
         • Configurar doação automática  
@@ -103,7 +146,7 @@ responses:
         • Prazo e validade  
         • Problemas comuns  
         
-        Digite o nome da opção para saber mais!
+        Escolha a opção desejada para saber mais.
 
   utter_Voltar:
     - text: |
@@ -116,7 +159,7 @@ responses:
         • Doação de itens (alimentos, roupas etc)  
         • Entrega presencial  
         
-        Digite o nome da opção para saber mais!
+        Escolha a opção desejada para saber mais.
 
   utter_Sub_doacao_bancaria:
     - text: |
@@ -201,13 +244,13 @@ responses:
   utter_Sub_doacao_o_que_doar:
     - text: |
         Aceitamos doações de:  
-        - Brinquedos e livros infantis em bom estado  
-        - Instrumentos musicais usados, desde que conservados
+        • Brinquedos e livros infantis em bom estado  
+        • Instrumentos musicais usados, desde que conservados
         
         Não aceitamos:  
-        - Roupas usadas  
-        - Alimentos  
-        - Produtos de higiene
+        • Roupas usadas  
+        • Alimentos  
+        • Produtos de higiene
         
         Nossa sede está localizada na Rua Barão de Aguiar, 108 – Parque Colonial – São Paulo/SP – CEP 04611-040, próximo ao Aeroporto de Congonhas.
         
@@ -236,25 +279,24 @@ responses:
         Você pode fazer isso tanto pelo site quanto pelo aplicativo oficial da Nota Fiscal Paulista. Abaixo explico os dois caminhos:
         
         💻 Cadastro pelo SITE (computador ou navegador do celular)
-        
             Acesse o site oficial da Nota Fiscal Paulista:
             https://www.nfp.fazenda.sp.gov.br
         
-            Clique em "Acesso ao Sistema" (fica no canto superior direito).
+          Clique em "Acesso ao Sistema" (fica no canto superior direito).
         
-            Faça login com seu CPF/CNPJ e senha.
+          Faça login com seu CPF/CNPJ e senha.
             (Se for o primeiro acesso, será necessário fazer o cadastro previamente.)
         
-            No menu lateral esquerdo, vá até:
+          No menu lateral esquerdo, vá até:
             Entidades > Doação de Cupons com CPF (automática)
         
-            Clique em "Cadastrar Entidade"
+          Clique em "Cadastrar Entidade"
         
-            Digite o CNPJ (11.433.432/0001-02) da entidade que deseja ajudar (confira se está correto!)
+          Digite o CNPJ (11.433.432/0001-02) da entidade que deseja ajudar (confira se está correto!)
         
-            Escolha o período de doação automática (ex: 12 meses)
+          Escolha o período de doação automática (ex: 12 meses)
         
-            Clique em "Confirmar"
+          Clique em "Confirmar"
         
         Pronto! Toda vez que você pedir CPF na nota, os créditos e bilhetes serão doados automaticamente para essa entidade.
         
@@ -264,18 +306,17 @@ responses:
             – Android: Google Play Store
             – iOS: App Store
         
-            Abra o aplicativo e faça login com seu CPF e senha.
+          Abra o aplicativo e faça login com seu CPF e senha.
         
-            No menu principal, vá em:
-            Doação Automática com CPF
+          No menu principal, vá em: "Doação Automática com CPF"
         
-            Toque em "Cadastrar Entidade"
+          Toque em "Cadastrar Entidade"
         
-            Digite o CNPJ da Ritmos: 11.433.432/0001-02
+          Digite o CNPJ da Ritmos: 11.433.432/0001-02
         
-            Escolha o período da doação (por exemplo: 12 meses)
+          Escolha o período da doação (por exemplo: 12 meses)
         
-            Clique em Confirmar
+          Clique em Confirmar
         
         DICA: Verifique se a entidade escolhida está ativa e apta a receber doações.
 
@@ -338,20 +379,15 @@ responses:
         Ao ativar a doação automática, toda nota fiscal com CPF emitida para você será doada para a entidade que você escolher, sem precisar cadastrar nota por nota.
         
         PASSO A PASSO:
-        
         1️⃣ Acesse o site oficial da Nota Fiscal Paulista:  
         https://www.nfp.fazenda.sp.gov.br
-        
         2️⃣ Faça login com seu CPF e senha
-        
         3️⃣ No menu, clique em:  
          “Entidades” > “Doação de Cupons com CPF (automática)”
-        
         4️⃣ Clique em “Cadastrar Entidade”
-        
-        5️⃣ Digite o **CNPJ da entidade** que você deseja apoiar  
+        5️⃣ Digite o **CNPJ da entidade** que você deseja apoiar:  
+         Ritmos do Coração 
         CNPJ: 11.433.432/0001-02
-        
         6️⃣ Escolha o período da doação (geralmente 1 ano) e confirme
         
         Pronto! Agora todas as notas emitidas com seu CPF serão doadas automaticamente!
@@ -366,10 +402,10 @@ responses:
         
         Toda nota fiscal com CPF tem um prazo de até 90 dias a partir da data da compra para ser validada no sistema da Nota Fiscal Paulista.
         
-        - Após esses 90 dias, se a nota não for processada corretamente (ou estiver com erro), ela pode não gerar créditos e não será considerada para sorteios.
-        -  Se você quer doar sua nota para alguma entidade cadastrada, como uma ONG, o ideal é fazer a doação antes de completar esses 90 dias. Após isso, a nota expira e não poderá mais ser doada.
-        - Importante: A nota pode aparecer no sistema em até 10 dias úteis após a compra. Se ela não aparecer nesse período, vale conferir se foi emitida corretamente com o CPF informado.
-        
+        Após esses 90 dias, se a nota não for processada corretamente (ou estiver com erro), ela pode não gerar créditos e não será considerada para sorteios.
+        Se você quer doar sua nota para alguma entidade cadastrada, como uma ONG, o ideal é fazer a doação antes de completar esses 90 dias. Após isso, a nota expira e não poderá mais ser doada.
+        Importante: A nota pode aparecer no sistema em até 10 dias úteis após a compra. Se ela não aparecer nesse período, vale conferir se foi emitida corretamente com o CPF informado.
+
         Dica: Para não perder nenhuma nota, cadastre sua doação como automática pelo site ou aplicativo. Assim, todas as notas com seu CPF serão doadas dentro do prazo automaticamente.
         
         Se quiser, posso te mostrar como ativar a doação automática!
@@ -381,8 +417,161 @@ responses:
         • Prazo de doação expirado  
         • Cupom com informações incorretas  
         • Problemas técnicos no site da Nota Fiscal Paulista
+        • Cadastro, Desbloqueios de Senha, Problemas no Acesso
         
-        Recomendamos tentar mais tarde ou entrar em contato com o suporte do programa.
+        Caso não seja nenhuma dessas opções, recomendamos tentar mais tarde ou entrar em contato com o suporte do programa.
+
+  utter_Sub_nota_fiscal_problemas_cadastro:
+    - text: |
+        Para problemas relacionados a cadastro, desbloqueios de senha ou acesso, aqui estão as opções disponíveis:
+        
+        • Cadastro de Pessoa Física
+        • Cadastro de Pessoa Jurídica
+        • Reativação de Cadastro
+        • Recuperar senha
+        • Desbloqueio de Senha - Cadastro Pendente
+        
+        Caso queira mais informações, pode acessar o site https://portal.fazenda.sp.gov.br/servicos/nfp/Paginas/Guia-Cadastro-PF.aspx
+
+  utter_sub_nota_fiscal_cadastro_pf:
+    - text: |
+        Para cadastrar-se como Pessoa Física no programa Nota Fiscal Paulista, siga estes passos:
+        
+         1️⃣ Acesse o site oficial: https://www.nfp.fazenda.sp.gov.br
+         2️⃣ Clique em "Cadastrar-se" ou "Primeiro Acesso"
+         3️⃣ Selecione a opção "Pessoa Física"
+         4️⃣ Preencha os dados solicitados: CPF, Nome completo, Data de nascimento, Endereço completo, Telefone e E-mail
+         5️⃣ Crie uma senha segura (mínimo 8 caracteres, com letras e números)
+         6️⃣ Confirme a senha
+         7️⃣ Aceite os termos de uso
+         8️⃣ Clique em "Cadastrar"
+         9️⃣ Aguarde o e-mail de confirmação e valide seu cadastro
+
+        Após o cadastro, você poderá doar suas notas fiscais para nossa ONG Ritmos do Coração!
+
+  utter_Sub_nota_fiscal_cadastro_pj:
+    - text: |
+        💼 Cadastro Pessoa Jurídica — Como se cadastrar na Nota Fiscal Paulista
+        
+        Essa opção é destinada apenas para empresas que não são contribuintes do ICMS.
+        O cadastro é necessário para que a empresa possa utilizar créditos e participar dos sorteios mensais da Nota Fiscal Paulista.
+        
+        📍 Onde fazer:
+        Exclusivamente pela internet, no site oficial da Nota Fiscal Paulista.
+        Caso não tenha acesso à internet, é possível utilizar um posto do Acessa São Paulo.
+        
+        📄 Documentos necessários:
+        CNPJ da empresa, CPF do representante legal e E-mail válido
+        
+        🧭 Passo a passo:
+        1️⃣ Acesse o site da Nota Fiscal Paulista: https://www.nfp.fazenda.sp.gov.br
+        2️⃣ Clique em "Cadastro Pessoa Jurídica" na área de "Novos Cadastros"
+        3️⃣ Preencha os dados conforme o cadastro da Receita Federal
+        4️⃣ Caso o CNPJ não seja contribuinte do ICMS, complete os campos adicionais
+        5️⃣ Clique em "Solicitar Cadastramento" — o acesso é liberado imediatamente
+
+  utter_Sub_nota_fiscal_reativar_cadastro:
+    - text: |
+        🔄 Reativação de Cadastro — Nota Fiscal Paulista
+
+        Esse processo é destinado a quem inativou o cadastro (descadastro) no sistema da NFP e, ao tentar acessar, recebe a mensagem:
+        "Erro: Usuário inativo (CPF ou CNPJ)"
+
+        📘 Para saber mais sobre o descadastro, consulte o guia "Inativação de Cadastro – PF".
+
+        📍 Onde solicitar:
+        A reativação pode ser feita de duas formas:
+        1. Presencialmente, em um Posto Fiscal da Secretaria da Fazenda e Planejamento (SEFAZ-SP) da sua jurisdição.
+          → Consulte o posto correspondente no Sistema de Regionais e agende o atendimento eletrônico.
+        2. Por via postal, enviando a documentação para:
+          Secretaria da Fazenda e Planejamento
+          Seção de Pronto Atendimento – SePA
+          Assunto: "Nota Fiscal Paulista"
+          Av. Rangel Pestana, 300 – térreo – Centro – São Paulo – SP – CEP 01017-911
+
+        📄 Documentos necessários:
+
+        👤 Pessoa Física:
+        1. Requerimento específico disponível no site da NFP (menu Downloads > Requerimentos).
+        2. Documento oficial com foto (sem rasura).
+        3. CPF (dispensável se já constar no documento).
+        4. Se enviado por terceiros:
+        5. Requerimento com firma reconhecida.
+        6. Cópias simples e legíveis dos documentos.
+        7. Documento e CPF do procurador.
+
+        🏢 Pessoa Jurídica:
+        1. Requerimento específico com firma reconhecida.
+        2. Certidão simplificada da JUCESP ou contrato social (cópia autenticada ou consolidada).
+        3. Documento com foto e CPF do representante legal.
+        4. Documento e CPF da pessoa que entregar a documentação.
+
+        ✉️ Por via postal (PF ou PJ):
+        1. Mesmo conjunto de documentos exigidos presencialmente.
+        2. Requerimento com firma reconhecida.
+        3. Cópias legíveis dos documentos (autenticadas quando não verificáveis online).
+
+        🧾 Exemplos de documentos oficiais com foto: RG, CNH, Passaporte, CTPS, carteira profissional ou militar.
+
+        ⚙️ Procedimentos:
+        1️⃣ Compareça ao Posto Fiscal ou
+        2️⃣ Envie toda a documentação necessária por via postal para o endereço indicado.
+
+  utter_Sub_nota_fiscal_recuperar_senha:
+    - text: |
+        🔐 Recuperar Senha — Nota Fiscal Paulista
+
+        Este procedimento é voltado para Pessoas Físicas ou Jurídicas com perfil de Consumidor que esqueceram a senha de acesso ao sistema da NFP.
+
+        📍 Onde fazer:
+        Pelo site oficial da Nota Fiscal Paulista.
+
+        📄 Documentos:
+        Não é necessário apresentar documentos, apenas informar os dados do consumidor (CPF ou CNPJ).
+
+        ⚙️ Procedimentos:
+        1️⃣ Acesse o site da Nota Fiscal Paulista: https://portal.fazenda.sp.gov.br/servicos/nfp
+        2️⃣ Clique em "Esqueci minha senha"
+        3️⃣ Digite o CPF ou CNPJ cadastrado
+        4️⃣ Clique em "Ok"
+        5️⃣ Utilize as opções disponíveis, preferencialmente nesta ordem:
+           → Envio da frase de lembrete (por e-mail)
+           → Envio do link para cadastrar nova senha (por e-mail)
+           → Recadastrar senha — apenas em último caso (ex: e-mail alterado)
+             🔸 Esse processo pode exigir comparecimento presencial ao Procon, Poupatempo ou Secretaria da Fazenda, ou o envio de correspondência (veja o guia "Desbloqueio de Senha")
+
+        💡 Alternativas de acesso:
+        → É possível alterar ou recuperar a senha via conta gov.br, diretamente no site da NFP
+        → Consumidores que possuem certificado digital (e-CPF ou e-CNPJ) podem acessar o sistema com ele — essa opção está disponível apenas no site do Programa.
+
+  utter_Sub_nota_fiscal_desbloqueio_senha:
+    - text: |
+        🔓 Desbloqueio de Senha — Cadastro Pendente (Nota Fiscal Paulista)
+
+        Este guia orienta o consumidor que, ao tentar acessar o sistema, recebe a mensagem:
+        "Aviso: Cadastro pendente de desbloqueio de senha. Para imprimir o requerimento clique aqui."
+
+        ⚠️ Atenção:
+        → Se a mensagem for "Usuário inativo", consulte o guia "Como Reativar o Cadastro da NFP".
+        → Se for "CPF consta no Sistema de Controle de Óbitos – SISOBI", consulte o guia "Bloqueio Óbito – SISOBI".
+
+        🚫 Motivos comuns para o bloqueio:
+        → Pontuação insuficiente no Termômetro de Confiabilidade (menos de 3 pontos);
+        → Recadastramento solicitado pelo próprio usuário;
+        → Tentativas de transferência de créditos sem sucesso;
+        → Saldo elevado no momento do cadastro;
+        → Suspeita de fraude no sistema.
+
+        📍 Onde fazer:
+        Pelo site da Nota Fiscal Paulista, com login via conta gov.br.
+
+        📄 Documentos:
+        Não é necessário apresentar documentos.
+
+        ⚙️ Procedimentos:
+        1️⃣ Acesse o site da Nota Fiscal Paulista: https://portal.fazenda.sp.gov.br/servicos/nfp
+        2️⃣ Faça login com sua conta gov.br
+        3️⃣ Siga as orientações exibidas na tela para realizar o desbloqueio.
 
   utter_Sub_nota_fiscal_verificar_validacao:
     - text: |
@@ -396,3 +585,32 @@ responses:
         4️⃣ Escolha o período e confira se sua doação foi registrada
         
         Se tiver dúvidas ou não encontrar a informação, posso te ajudar com o passo a passo.
+
+  utter_sobre_projeto:
+    - text: |
+        O Projeto Ritmos do Coração é uma ONG que trabalha com educação musical e social! 🎵
+        
+        Nossa missão é transformar vidas através da música, oferecendo:
+        
+        🎵 Aulas de música para crianças e jovens
+        🎭 Atividades culturais e educacionais
+        🤝 Apoio social para famílias em vulnerabilidade
+        
+        CNPJ: 11.433.432/0001-02
+
+  utter_localizacao_horarios:
+    - text: |
+        📍 Nossa sede fica em:
+        
+        Rua Barão de Aguiar, 108 – Parque Colonial
+        São Paulo/SP – CEP 04611-040
+        (Próximo ao Aeroporto de Congonhas)
+        
+        🕐 Horário de funcionamento:
+        Segunda a sexta-feira, das 09h às 17h
+        
+        📞 Informações de Contato:
+        E-mail: contato@ritmosdocoracao.org.br
+        Telefone: (11) 93900-9467
+        
+        Você pode nos visitar ou fazer doações presenciais nesse horário!

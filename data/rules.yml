@@ -1,28 +1,25 @@
 version: "3.1"
-rules:
+rules: 
 
-- rule: Fluxo inicial de saudação
+- rule: Saudacao do usuario
   steps:
     - intent: greet
     - action: utter_greet
-    - action: utter_Menu_doacao
-    - action: utter_proxima_pergunta
-    - active_loop: null 
 
 - rule: Responder ao Menu de Doação
   steps:
     - intent: Menu_doacao
     - action: utter_Menu_doacao
 
-- rule: Mostrar Menu após confirmação (Sim)
-  steps:
-    - intent: affirm
-    - action: utter_Menu_doacao
-
 - rule: Responder à intenção de Voltar (Menu Principal)
   steps:
     - intent: Voltar
     - action: utter_Voltar
+
+- rule: Voltar ao menu principal
+  steps:
+    - intent: voltar_menu_principal
+    - action: utter_greet
 
 - rule: Iniciar Menu Nota Fiscal (Exibir Menu e Esperar)
   steps:
@@ -48,6 +45,48 @@ rules:
   steps:
     - intent: Sub_nota_fiscal_verificar_validacao
     - action: utter_Sub_nota_fiscal_verificar_validacao
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Problemas de Cadastro da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_problemas_cadastro
+    - action: utter_Sub_nota_fiscal_problemas_cadastro
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Cadastro PF da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_cadastro_pf
+    - action: utter_sub_nota_fiscal_cadastro_pf
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Cadastro PJ da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_cadastro_pj
+    - action: utter_Sub_nota_fiscal_cadastro_pj
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Reativação de Cadastro da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_reativar_cadastro
+    - action: utter_Sub_nota_fiscal_reativar_cadastro
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Recuperar Senha da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_recuperar_senha
+    - action: utter_Sub_nota_fiscal_recuperar_senha
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder a Desbloqueio de Senha da Nota Fiscal
+  steps:
+    - intent: Sub_nota_fiscal_desbloqueio_senha
+    - action: utter_Sub_nota_fiscal_desbloqueio_senha
     - action: utter_proxima_pergunta
     - active_loop: null
 
@@ -139,4 +178,29 @@ rules:
   steps:
     - intent: nlu_fallback
     - action: utter_default
+    - active_loop: null
+
+- rule: Usuário quer continuar (Sim)
+  steps:
+    - intent: affirm
+    - action: utter_continuar_conversa
+    - action: utter_Menu_doacao
+
+- rule: Usuário não quer continuar (Não)
+  steps:
+    - intent: deny
+    - action: utter_encerrar_conversa
+
+- rule: Responder sobre o projeto
+  steps:
+    - intent: sobre_projeto
+    - action: utter_sobre_projeto
+    - action: utter_proxima_pergunta
+    - active_loop: null
+
+- rule: Responder localização e horários
+  steps:
+    - intent: localizacao_horarios
+    - action: utter_localizacao_horarios
+    - action: utter_proxima_pergunta
     - active_loop: null

@@ -1,0 +1,33 @@
+# Rasa
+.rasa/
+models/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Environment
+.python-version
+.env
+
+# Poetry
+poetry.lock
+install-poetry.py
+
+# Credentials (sensitive data)
+credentials.yml
+endpoints.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
