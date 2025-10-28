@@ -244,13 +244,13 @@ responses:
   utter_Sub_doacao_o_que_doar:
     - text: |
         Aceitamos doações de:  
-        • Brinquedos e livros infantis em bom estado  
-        • Instrumentos musicais usados, desde que conservados
+        → Brinquedos e livros infantis em bom estado  
+        → Instrumentos musicais usados, desde que conservados
         
         Não aceitamos:  
-        • Roupas usadas  
-        • Alimentos  
-        • Produtos de higiene
+        → Roupas usadas  
+        → Alimentos  
+        → Produtos de higiene
         
         Nossa sede está localizada na Rua Barão de Aguiar, 108 – Parque Colonial – São Paulo/SP – CEP 04611-040, próximo ao Aeroporto de Congonhas.
         
